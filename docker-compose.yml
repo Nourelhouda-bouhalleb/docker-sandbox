@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  sandbox:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    networks:
+      - sandbox_network
+
+networks:
+  sandbox_network:
+    driver: bridge
